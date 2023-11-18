@@ -17,7 +17,7 @@ app.use(express.json());
 // cors allows cross-origin requests(localhost:3000 to localhost:4000)
 app.use(cors({
   credentials: true,
-  origin: 'http://localhost:3000',
+  origin: process.env.FRONTEND_URL
 
 }));
 
