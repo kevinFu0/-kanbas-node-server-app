@@ -78,26 +78,39 @@ function UserRoutes(app) {
     res.json(req.session['currentUser']);
   };
 
-  app.post("/api/users/signin", signin);
-
-  app.post("/api/users/signout", signout);
-
-  
-  app.post("/api/users/signup", signup);
-
-   
-  app.post("/api/users/account", account);
-
-  app.delete("/api/users/:userId", deleteUser);
-
-  
-  app.get("/api/users/:userId", findUserById);
-
   app.post("/api/users", createUser);
 
   app.get("/api/users", findAllUsers);
 
+  app.post("/api/users/signin", signin);
+
+     
+  app.post("/api/users/account", account);
+
+  
+
   app.put("/api/users/:userId", updateUser);
+
+  app.get("/api/users/:userId", findUserById);
+
+  
+  app.delete("/api/users/:userId", deleteUser);
+
+  app.post("/api/users/signup", signup);
+
+
+  app.post("/api/users/signout", signout);
+
+  
+
+
+
+
+  
+
+
+
+
 
   
   
