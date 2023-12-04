@@ -1,4 +1,7 @@
 import mongoose from "mongoose";
+
+
+
 const userSchema = new mongoose.Schema({
   // String field that is required and unique
     username: { type: String, required: true, unique: true },
