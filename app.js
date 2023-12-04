@@ -38,7 +38,7 @@ const app = express();
 
 app.use(cors({
   credentials: true, // support cookies 
-  origin: process.env.FRONTEND_URL // restrict cross origin resource sharing to the react application
+  origin: "https://a6--wonderful-truffle-403350.netlify.app" // restrict cross origin resource sharing to the react application
 
 }));
 
