@@ -1,6 +1,9 @@
 import * as dao from './dao.js';
 // let currentUser = null;
 function UserRoutes(app) {
+
+  
+
   // creates new user using req.body
   // returns new user
   const createUser = async (req, res) => {
@@ -63,10 +66,19 @@ function UserRoutes(app) {
     res.json(200);
   };
 
-  // curentUser is who's logged in
-  const account = async (req, res) => {
-    res.json(req.session['currentUser']);
-  };
+    // curentUser is who's logged in
+    const account = async (req, res) => {
+      const currentUser = req.session['currentUser'];
+      if (currentUser) {
+        res.json(currentUser);
+      } else {
+        res.json("current user not found");
+      }
+    };
+  
+  
+
+
 
   app.post("/api/users", createUser);
   app.get("/api/users", findAllUsers);

@@ -39,7 +39,7 @@ const app = express();
 
 app.use(cors({
   credentials: true, // support cookies 
-  origin: "https://a6--wonderful-truffle-403350.netlify.app" // restrict cross origin resource sharing to the react application
+  origin: process.env.FRONTEND_URL  // restrict cross origin resource sharing to the react application
 
 }));
 
@@ -50,13 +50,7 @@ const sessionOptions = {
   resave: false,
   saveUninitialized: false,
 };
-if (process.env.NODE_ENV !== "development") {
-  sessionOptions.proxy = true;
-  sessionOptions.cookie = {
-    sameSite: "none",
-    secure: true,
-  };
-}
+
 app.use(session(sessionOptions));
 
 
